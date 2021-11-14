@@ -1,0 +1,117 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#logo{
+    color: #4558C6;
+}
+#logo .e{
+    font-family: 'Lobster', cursive;
+
+}
+#logo .book{
+    font-family: 'Anton', sans-serif;
+    font-family: 'Lobster', cursive;
+}
+
+.btn-dark, .btn-dark:hover, .btn-dark:active, .btn-dark:visited {
+    background-color: #4558C6;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #4558C6;
+}
+/* -----------navbar style-- */
+.bg-custom{
+
+    background: linear-gradient(to right , #4558C6,#1c309c);
+
+}
+
+
+#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+}
+.navbar{
+    padding: 0 !important;
+
+}
+
+.navbar-nav li{
+    padding: 0px 12px;
+
+}
+.navbar-nav button{
+    float: right;
+    text-align:left ;
+    transition: 0.3s ease;
+
+}
+.navbar-nav li a{
+    font-weight: 600;
+
+    color: rgb(253, 252, 252) !important;
+    float: right;
+    text-align:left ;
+    transition: 0.3s ease;
+
+}
+.navbar-nav li a:hover,
+.navbar-nav li a.active
+{
+    color: rgb(20, 19, 19) !important;
+    background-color: rgb(243, 235, 235);
+    border-radius: 5px;
+}
+
+.navbar-toggler{
+    border: none;
+    outline: none !important;
+}
+#bar{
+    font-size: 1.5rem;
+    padding:  7px !important;
+    color: rgb(255, 249, 249);
+    font-weight: 500;
+    transition: 0.5s ease;
+
+
+}
+#bar:hover,
+#bar:active{
+    color: white;
+}
+@media screen and (max-width : 991px) {
+    #nav-bar > nav > div > button:hover,
+    #nav-bar > nav > div > button:active
+    {
+        background-color: #4558C6;
+    }
+    #nav-bar > nav > div > button:hover #bar,
+    #nav-bar > nav > div > button:active #bar
+    {
+        background-color: #4558C6;
+    }
+
+
+}
+.btn{
+    font-weight: 600;
+}
+/* -----------navbar end-- */
+
+
+
+/* ..................footer section............ */
+#foot{
+    background-image:linear-gradient(to right , #4558C6, rgba(28, 48, 156, 0.89));
+    margin-top: 20px;
+
+}
+.footer-imge{
+    width: 100%;
+}
+

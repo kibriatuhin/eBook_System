@@ -15,7 +15,6 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean userRegistration(User user) {
-
         boolean f = false;
         try {
             String sql = "insert into user(name, email,phone,password) values(?,?,?,?)";
@@ -29,7 +28,6 @@ public class UserDAOImpl implements UserDAO {
             if (i==1){
                 f=true;
             }
-
 
         }catch (Exception e){
             e.printStackTrace();

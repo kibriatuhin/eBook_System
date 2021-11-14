@@ -18,12 +18,12 @@
 <%@include file="allComponent/navBar.jsp"%>
 <div class=" container pt-5 pb-5">
     <div class="row justify-content-center">
-        <div class="registration text-white col-lg-7 col-md-7  shadow-lg p-5 mb-6 bg-white rounded">
-            <h4 class="text-center" style="font-weight: 700;">Registration</h4>
+        <div class="login  col-lg-7 col-md-7  shadow-lg p-5 mb-6 bg-white rounded">
+            <h4 class="text-center" style="font-weight: 700; color:#4558C6 ">Registration</h4>
             <%-----using JSTL------%>
 
             <c:if test="${not empty succMsg}">
-                <p class="text-center text-white" style="font-weight: 500">
+                <p class="text-center text-success" style="font-weight: 500">
                     ${succMsg}
                 </p>
                 <c:remove var="succMsg" scope="session"/>
@@ -31,7 +31,7 @@
             </c:if>
             <%--ne null--%>
             <c:if test="${not empty failedMsg }">
-                <p class="text-center text-white" style="font-weight: 500">
+                <p class="text-center text-danger" style="font-weight: 500">
                     ${failedMsg}
                 </p>
                 <c:remove var="failedMsg" scope="session"/>
@@ -71,7 +71,7 @@
                     <label class="form-check-label" for="exampleCheck1">Agree & Terms  Condition</label>
                 </div>
                 <div class="row justify-content-lg-center">
-                    <button type="submit" class="btn btn-light " style="font-weight: 600;">Registration</button>
+                    <button type="submit" class="btn btn-dark " style="font-weight: 600;">Registration</button>
                 </div>
             </form>
         </div>

@@ -18,11 +18,11 @@
 <%@include file="allComponent/navBar.jsp"%>
 <div class=" container pt-5 pb-5">
     <div class="row justify-content-center">
-        <div class="registration text-white col-lg-7 col-md-7  shadow-lg p-5 mb-6 bg-white rounded">
-            <h4 class="text-center " style="font-weight: 700;">Login here</h4>
+        <div class="login  col-lg-7 col-md-7  shadow-lg p-5 mb-6 bg-white rounded">
+            <h4 class="text-center " style="font-weight: 700;color:#4558C6 ">Login here</h4>
             <%-- -----------jstl start----- --%>
             <c:if test="${not empty failedMsg}">
-                <p class="text-center text-white" style="font-weight: 500">
+                <p class="text-center text-danger" style="font-weight: 500">
                     ${failedMsg}
                 </p>
                 <c:remove var="failedMsg" scope="session"/>
@@ -50,8 +50,8 @@
 
 
                 <div class="text-center  pt-2">
-                    <button type="submit" class="btn btn-light " style="font-weight: 600;">Login</button><br><br>
-                    <a href="#" class="text-white " style="font-weight: 600;">Create Account</a>
+                    <button type="submit" class="btn btn-dark " style="font-weight: 600;">Login</button><br><br>
+                    <a href="Registration.jsp" class="text-white " style="font-weight: 600;">Create Account</a>
 
                 </div>
             </form>

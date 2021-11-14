@@ -191,10 +191,16 @@
 }
 
 /*-------registration-----*/
-.registration{
-    background-image: linear-gradient(to right , #5061c0,#1f3eeb);
+.registrationn{
+    background-image: linear-gradient(to right , rgba(228, 191, 97, 0), rgba(192, 191, 235, 0.02));
     border-top-left-radius: 40px !important;
     border-bottom-right-radius: 40px !important;
     border-top-right-radius: 20px !important;
 }
 
+.login{
+    background-image: linear-gradient(to right , rgba(228, 191, 97, 0), rgba(192, 191, 235, 0.02));
+    border-top-left-radius: 40px !important;
+    border-bottom-right-radius: 40px !important;
+    border-top-right-radius: 20px !important;
+}

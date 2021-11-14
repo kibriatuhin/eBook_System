@@ -43,8 +43,7 @@ public class RegisterServlet extends HttpServlet {
                     response.sendRedirect(context +"/Registration.jsp");
 
                 }
-
-                    //System.out.println("user Register successffull....");
+                //System.out.println("user Register successffull....");
                 else
                 {
                     httpSession.setAttribute("failedMsg","Something wrong on server..");
@@ -58,13 +57,8 @@ public class RegisterServlet extends HttpServlet {
                 String context = request.getContextPath();
 
                 response.sendRedirect(context + "/Registration.jsp");
-                System.out.println("Please Check Agree & Terms Condition");
+                //System.out.println("Please Check Agree & Terms Condition");
             }
-
-
-
-
-
 
         }catch (Exception e){
             e.printStackTrace();
