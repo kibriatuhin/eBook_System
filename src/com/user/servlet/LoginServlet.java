@@ -26,11 +26,12 @@ public class LoginServlet extends HttpServlet {
 
             if ("admin@gmail.com".equals(email) && "admin".equals(password)){
                 User user = new User();
+                user.setName("Admin");
 
                 httpSession.setAttribute("userObj",user );
 
                 String context = request.getContextPath();
-                response.sendRedirect(context + "/admin/Home.jsp");
+                response.sendRedirect(context + "/Admin_Home.jsp");
             } else {
                 String context = request.getContextPath();
                 User user = userDAO.login(email,password);

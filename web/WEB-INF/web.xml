@@ -5,6 +5,28 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
         version="4.0">
+
+    <servlet>
+        <servlet-name>AddBooks</servlet-name>
+        <servlet-class>com.admin.AddBooks</servlet-class>
+    </servlet>
+    <!--<servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.user.servlet.LogoutServlet</servlet-class>
+    </servlet>-->
+    <!--<servlet>
+        <servlet-name>BooksDeleteServlet</servlet-name>
+        <servlet-class>com.admin.BooksDeleteServlet</servlet-class>
+    </servlet>-->
+    <!--<servlet>
+        <servlet-name>EditBooksServlet</servlet-name>
+        <servlet-class>com.admin.EditBooksServlet</servlet-class>
+    </servlet>-->
+    <servlet-mapping>
+        <servlet-name>AddBooks</servlet-name>
+        <url-pattern>/AddBooks</url-pattern>
+    </servlet-mapping>
+
     <!--<servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.user.servlet.LoginServlet</servlet-class>

@@ -2,6 +2,9 @@
 <%@ page import="com.com.DB.DBConnection" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="com.DAO.BookDAOImpl" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.entity.BookDtls" %>
 
 
 <%--
@@ -47,7 +50,7 @@
     <!---------------------------banner end---------------------- -->
     <!-- -------Recent-book start----- -->
 
-    <section id="recent-book" class="my-5 pb-5">
+    <section id="recent-book">
         <div class="container text-center mt-2 py-5">
             <h3>Recent Book</h3>
             <hr class="mx-auto">
@@ -211,18 +214,22 @@
 
     <!-- -------New book start----- -->
 
-    <section id="New-book" class="my-5 pb-5">
+    <section id="New-book">
         <div class="container text-center mt-2 py-5">
             <h3>New Book</h3>
             <hr class="mx-auto">
 
-        </div>
-        <div class="container">
+        </div><div class="container">
             <div class="row ">
+
+                <%
+                    BookDAOImpl dao = new BookDAOImpl(DBConnection.getConn());
+                    List<BookDtls> list = dao.getNewBook();
+                    for (BookDtls b : list){%>
                 <div class="col-lg-3 col-md-4 col-12 text-center product">
                     <div class="card">
                         <div class="card-body">
-                            <img class="img-fluid mb-3" src="books/book1.jpg" alt="">
+                            <img class="img-fluid mb-3" src="books/<%=b.getPhotoName()%>" alt="">
                             <div class="star">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -231,17 +238,17 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <p>
-                                java
+                                <%=b.getBookName()%>
                             </p>
                             <p>
-                                E Balagurusamy
+                                <%=b.getAuthor()%>
 
                             </p>
                             <p>
-                                Categories: New
+                                Categories: <%=b.getBookCategory()%>
                             <p>
                             <h4>
-                                $92.00
+                                $<%=b.getPrice()%>
                             </h4>
                             <div class="row justify-content-center">
                                 <a href="#" class="buy-btn btn btn-dark btn-sm  mt-md-1"><i class="fas fa-cart-plus"></i> Add Card</a>
@@ -255,108 +262,10 @@
 
 
                 </div>
-                <div class="col-lg-3 col-md-4 col-12 text-center product">
-                    <div class="card">
-                        <div class="card-body">
-                            <img class="img-fluid mb-3" src="books/book2.jpg" alt="">
-                            <div class="star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-
-                            </div>
-                            <p class="p-name">
-                                C++
-                            </p>
-                            <p>
-                                Siddhartha Rao
-                            </p>
-                            <p>
-                                Categories: New
-                            <p>
-                            <h4 class="p-price">
-                                $82.00
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a href="#" class="buy-btn btn btn-dark btn-sm mt-md-1"><i class="fas fa-cart-plus"></i> Add Card</a>
-                                <a href="#" class="buy-btn btn btn-dark btn-sm mt-md-1 ml-1">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
+                    <%}
+                %>
 
 
-
-
-                </div>
-                <div class="col-lg-3 col-md-4 col-12 text-center product">
-
-                    <div class="card">
-                        <div class="card-body">
-                            <img class="img-fluid mb-3" src="books/book3.jpg" alt="">
-
-                            <div class="star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p class="p-name">
-                                Networking
-                            </p>
-                            <p>
-                                Keveh Pahlavan
-                            </p>
-                            <p>
-                                Categories: New
-                            <p>
-                            <h4 class="p-price">
-                                $22.00
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a href="#" class="buy-btn btn btn-dark btn-sm mt-md-1"><i class="fas fa-cart-plus"></i> Add Card</a>
-                                <a href="#" class="buy-btn btn btn-dark btn-sm mt-md-1  ml-1">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <div class="col-lg-3 col-md-4 col-12 text-center product">
-
-                    <div class="card">
-                        <div class="card-body">
-                            <img class="img-fluid mb-3" src="books/book4.jpg" alt="">
-                            <div class="star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-
-                            </div>
-                            <p class="p-name">
-                                Database System
-                            </p>
-                            <p>
-                                Elmasri/ Navathe
-                            </p>
-                            <p>
-                                Categories: New
-                            <p>
-                            <h4 class="p-price">
-                                $12.00
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a href="#" class="buy-btn btn btn-dark btn-sm mt-md-1"><i class="fas fa-cart-plus"></i> Add Card</a>
-                                <a href="#" class="buy-btn btn btn-dark btn-sm mt-md-1  ml-1">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
             </div>
 
             <div class="row justify-content-center">
@@ -365,7 +274,7 @@
 
 
 
-        </div>
+        </div>-
 
 
 
@@ -374,7 +283,7 @@
     <!-- -------New book end----- -->
     <!-- -------Old start----- -->
 
-    <section id="Old-book" class="my-5 pb-5">
+    <section id="Old-book">
         <div class="container text-center mt-2 py-5">
             <h3>Old Book</h3>
             <hr class="mx-auto">

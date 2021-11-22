@@ -28,6 +28,13 @@
                 <c:remove var="failedMsg" scope="session"/>
 
             </c:if>
+            <c:if test="${not empty succMsg}">
+                <p class="text-center text-success" style="font-weight: 500">
+                        ${succMsg}
+                </p>
+                <c:remove var="failedMsg" scope="session"/>
+
+            </c:if>
 
 
             <%-- -----------jstl end----- --%>
