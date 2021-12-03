@@ -33,22 +33,33 @@ public class RegisterServlet extends HttpServlet {
 
             if (check!=null){
                 UserDAOImpl userDAO = new UserDAOImpl(DBConnection.getConn());
-                boolean f = userDAO.userRegistration(us);
-                if (f)
-                {
 
-                    httpSession.setAttribute("succMsg","Registration successfully..");
+                boolean f2 = userDAO.checkUser(email);
+                if (f2){
+
+                    boolean f = userDAO.userRegistration(us);
+                    if (f)
+                    {
+
+                        httpSession.setAttribute("succMsg","Registration successfully..");
+                        String context = request.getContextPath();
+
+                        response.sendRedirect(context +"/Registration.jsp");
+
+                    }
+                    //System.out.println("user Register successffull....");
+                    else
+                    {
+                        httpSession.setAttribute("failedMsg","Something wrong on server..");
+                        String context = request.getContextPath();
+                        response.sendRedirect(context +"/Registration.jsp");
+                    }
+                }else {
+                    httpSession.setAttribute("failedMsg","User already exist.Try another email id..");
+
                     String context = request.getContextPath();
 
-                    response.sendRedirect(context +"/Registration.jsp");
-
-                }
-                //System.out.println("user Register successffull....");
-                else
-                {
-                    httpSession.setAttribute("failedMsg","Something wrong on server..");
-                    String context = request.getContextPath();
-                    response.sendRedirect(context +"/Registration.jsp");
+                    response.sendRedirect(context + "/Registration.jsp");
                 }
                     //System.out.println("Something wrong on server");
             }else {

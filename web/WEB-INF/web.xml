@@ -10,6 +10,38 @@
         <servlet-name>AddBooks</servlet-name>
         <servlet-class>com.admin.AddBooks</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddOldBookServlet</servlet-name>
+        <servlet-class>com.user.servlet.AddOldBookServlet</servlet-class>
+    </servlet>
+    <!--<servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>com.user.servlet.SearchServlet</servlet-class>
+    </servlet>-->
+    <!--<servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.user.servlet.OrderServlet</servlet-class>
+    </servlet>-->
+    <!--<servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>com.user.servlet.UpdateServlet</servlet-class>
+    </servlet>-->
+    <!-- <servlet>
+         <servlet-name>DeleteOldServlet</servlet-name>
+         <servlet-class>com.user.servlet.DeleteOldServlet</servlet-class>
+     </servlet>-->
+    <servlet-mapping>
+        <servlet-name>AddOldBookServlet</servlet-name>
+        <url-pattern>/add_old_book</url-pattern>
+    </servlet-mapping>
+    <!-- <servlet>
+         <servlet-name>RemoveBookServlet</servlet-name>
+         <servlet-class>com.user.servlet.RemoveBookServlet</servlet-class>
+     </servlet>-->
+    <!--<servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.user.servlet.CartServlet</servlet-class>
+    </servlet>-->
     <!--<servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.user.servlet.LogoutServlet</servlet-class>

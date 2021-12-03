@@ -1,5 +1,5 @@
 
-<footer id="footer">
+<footer id="footer" >
     <img src="img/wave2.png" alt="" class="footer-img">
     <div class="container">
         <div class="row">

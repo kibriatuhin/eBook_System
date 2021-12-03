@@ -68,6 +68,7 @@
                         <select name="btype" id="inputState1" class="form-control">
                             <option selected>--Select--</option>
                             <option value="New">New Book</option>
+                            <option value="Old">Old Book</option>
 
                         </select>
                     </div>

@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
                 User user = userDAO.login(email,password);
                 if (user != null){
                     httpSession.setAttribute("userObj",user);
-                    response.sendRedirect(context +"/Home.jsp");
+                    response.sendRedirect(context +"/Index.jsp");
                 }else {
                     httpSession.setAttribute("failedMsg" ,"Email & Password Invalid");
                     response.sendRedirect(context +"/Login.jsp");

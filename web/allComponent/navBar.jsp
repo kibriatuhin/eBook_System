@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <div class="container-fluid">
     <div class="row pl-5">
         <div class="col-md-3 col-lg-3">
@@ -8,23 +10,40 @@
         </div>
 
 
-        <div class="col-lg-7 col-md-6">
+        <div class="col-lg-6 col-md-8">
 
-            <div class="input-group mb-3 mt-2">
-                <input type="text" class="form-control" placeholder="Search Here" aria-label="Recipient's username"
+            <form class="input-group mb-3 mt-2" action="Search.jsp" method="post" >
+
+                <input type="text" name="search" class="form-control" placeholder="Search Here" aria-label="Recipient's username"
                        aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-dark" type="button">Search</button>
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
                 </div>
-            </div>
+            </form>
 
         </div>
+        <c:if test="${not empty userObj}">
+            <div class=" col-lg-3 mt-2 ml-auto mb-2">
+                <a href="Checkout.jsp" class="btn btn-dark"><i style="font-size: 22px;" class="fas fa-cart-plus carttt"> Cart</i></a>
+                <a href="Setting.jsp" class="btn btn-dark"  ><i class="fas fa-user"></i> ${userObj.name}</a>
+                <a href="logout" class="btn btn-dark"  ><i class="fas fa-sign-out-alt"></i> Logout</a>
 
+            </div>
+        </c:if>
+<%--
         <div class=" col-lg-2 mt-2 ml-auto ">
             <a href="Login.jsp" class="btn btn-dark"  ><i class="fas fa-sign-in-alt"></i> Login</a>
             <a href="Registration.jsp" class="btn btn-dark"  ><i class="fas fa-user-plus"></i> Registration</a>
 
-        </div>
+        </div>--%>
+        <c:if test="${ empty userObj}">
+            <div class=" col-lg-3 mt-2 ml-auto mb-2">
+                <a href="Login.jsp" class="btn btn-dark"  ><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="Registration.jsp" class="btn btn-dark"  ><i class="fas fa-user-plus"></i> Registration</a>
+
+            </div>
+        </c:if>
+
     </div>
 
 </div>
@@ -48,27 +67,27 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-5">
                     <li class="nav-item ">
-                        <a class="nav-link " href="Index.jsp">Home</a>
+                        <a class="nav-link active" href="Index.jsp">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#service"><i class="fas fa-book-open"></i> Recent Book</a>
+                        <a class="nav-link" href="All_Recent_Book.jsp"><i class="fas fa-book-open"></i> Recent Book</a>
                     </li>
 
 
                     <li class="nav-item">
-                        <a class="nav-link " href="#footer"><i class="fas fa-book-open"></i> New Book</a>
+                        <a class="nav-link " href="All_New_Book.jsp"><i class="fas fa-book-open"></i> New Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#footer"><i class="fas fa-book-open"></i> Old Book</a>
+                        <a class="nav-link " href="All_Old_Book.jsp"><i class="fas fa-book-open"></i> Old Book</a>
                     </li>
 
 
 
                 </ul>
                 <form action="" class=" btnn ml-auto my-2 my-lg-0 my-5">
-                    <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-users-cog"></i> Setting </button>
-                    <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-phone-square-alt"></i> Contuct Us
-                    </button>
+                    <a href="Setting.jsp" class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-users-cog"></i> Setting </a>
+                    <a class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-phone-square-alt"></i> Contuct Us
+                    </a>
                 </form>
 
             </div>

@@ -32,7 +32,7 @@
                 <p class="text-center text-success" style="font-weight: 500">
                         ${succMsg}
                 </p>
-                <c:remove var="failedMsg" scope="session"/>
+                <c:remove var="succMsg" scope="session"/>
 
             </c:if>
 

@@ -1,4 +1,7 @@
-<%--
+<%@ page import="com.DAO.BookOrderDAOImpl" %>
+<%@ page import="com.com.DB.DBConnection" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.entity.Book_order" %><%--
   Created by IntelliJ IDEA.
   User: tuhin
   Date: 11/13/21
@@ -46,18 +49,26 @@
 
             <!--Table body-->
             <tbody>
+            <%
+                BookOrderDAOImpl dao = new BookOrderDAOImpl(DBConnection.getConn());
+               List<Book_order> list =  dao.getAllBook();
+               for (Book_order b: list){%>
             <tr>
-                <th scope="row">1</th>
-                <td>Kate</td>
-                <td>Moss</td>
-                <td>USA / The United Kingdom / China </td>
-                <td>New York City / Warsaw / Lodz / </td>
-                <td>New York City / Warsaw / Lodz / </td>
-                <td>New York City / Warsaw / Lodz / </td>
-                <td>New York City / Warsaw / Lodz / </td>
-                <td>New York City / Warsaw / Lodz / </td>
+                <th scope="row"><%=b.getOrderId()%></th>
+                <td><%=b.getUser_name()%></td>
+                <td><%=b.getEmail()%></td>
+                <td><%=b.getFulladd()%></td>
+                <td><%=b.getPhone()%></td>
+                <td><%=b.getBookName()%></td>
+                <td><%=b.getAuthor()%></td>
+                <td><%=b.getPrice()%></td>
+                <td><%=b.getPaymentType()%></td>
 
             </tr>
+
+               <%}
+            %>
+
 
             </tbody>
             <!--Table body-->
